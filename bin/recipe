@@ -1,0 +1,6 @@
+#!/usr/bin/ruby
+
+require_relative '../lib/recipe_generator'
+
+
+RecipeGenerator::CLI.new.call 
