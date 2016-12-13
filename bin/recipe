@@ -1,6 +1,6 @@
 #!/usr/bin/ruby
 
-require_relative '../lib/recipe_generator'
+require_relative '../lib/recipe_generator' #recipe > lib > finds file for recipe_generator(which is the environment)
 
 
 RecipeGenerator::CLI.new.call 

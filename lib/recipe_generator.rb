@@ -1,3 +1,4 @@
+require 'open-uri'
 require 'Nokogiri'
 require 'pry'
 require "./lib/recipe_generator/version" # The environment here connects to my version 

@@ -4,26 +4,21 @@
 class RecipeGenerator::CLI
 	
 
+
 	def call
 	 puts "----------Welcome to your Virtual Restaurant----------"
 	 diets
-	 exit
 	end
 
 	def diets
 		puts 
-		puts "Here are a list of diets you can choose from."
-		puts <<-DOC
-		1. Meat-Lovers
-		2. Vegetarian
-		3. Lacto-ovo Vegetarian
-		4. Pescetarian
-		5. Vegan
-		6. Paleo
-		7. Drinks
-	  DOC
-	  	puts 
+		puts "Here are a list of vegetarian option you can choose from."
+		@veggies = RecipeGenerator::Rep.scrape_veggie
+		 @veggies.each.with_index(1) do |veg, i|
+		  puts "#{i}. #{veg}"
+		end
 	  	detailed
+
 	end
 
 
@@ -49,7 +44,11 @@ class RecipeGenerator::CLI
        	puts "More info on paleo"
        when "7"
        	puts "Puts more info on drinks"
-	   end
+       when "exit"
+       	exit
+	   else
+	   	puts "That is an invalid entry, please try again."
+	  end
 	 end
 	end
 
