@@ -26,9 +26,9 @@ class RecipeGenerator::CLI
        recipe = RecipeGenerator::Recipe.find(input.to_i)
        case input
        when "1"
-       	puts "#{recipe.description}"
-       when "2"
        	puts "#{recipe.name}"
+       when "2"
+       	puts "#{recipe.duration}"
        when "3"
        	puts "More info on Lacto-ovo Vegetarian"
        when "4"
