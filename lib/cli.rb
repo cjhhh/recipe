@@ -28,7 +28,7 @@ class RecipeGenerator::CLI
        when "1"
        	puts "#{recipe.description}"
        when "2"
-       	puts "More info on vegetarian"
+       	puts "#{recipe.name}"
        when "3"
        	puts "More info on Lacto-ovo Vegetarian"
        when "4"

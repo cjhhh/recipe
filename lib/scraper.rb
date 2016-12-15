@@ -7,7 +7,7 @@ end
 
 
 def veggies
-  self.get_page.css("article")
+  self.get_page.css("article.node")
 end
 
 def make_veggies

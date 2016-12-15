@@ -9,9 +9,9 @@ attr_accessor :name, :duration, :description
 
   def self.new_vegetarian(d)
     self.new(
-     d.css("h3.teaser-item__title a span").text,
-     d.css("ul.teaser-item__info-items li.teaser-item__info-item.teaser-item__info-item--total-time span.mins").text,
-     d.css("div.field-item.even").text
+     d.css("h3.teaser-item__title a span").first.text,
+     d.css("li span.mins").first,
+     d.css("div.field-item.even").first.text
     )
   end
 
