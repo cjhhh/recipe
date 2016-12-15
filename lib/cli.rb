@@ -2,36 +2,31 @@
 
 
 class RecipeGenerator::CLI
-	
+
 
 
 	def call
+   RecipeGenerator::Scraper.new.make_veggies
 	 puts "----------Welcome to your Virtual Restaurant----------"
-	 diets
+	 puts 
+   puts "Here are a list of vegetarian option you can choose from."
+   detailed
 	end
 
-	def diets
-		puts 
-		puts "Here are a list of vegetarian option you can choose from."
-		@veggies = RecipeGenerator::Rep.scrape_veggie
-		 @veggies.each.with_index(1) do |veg, i|
-		  puts "#{i}. #{veg}"
-		end
-	  	detailed
 
-	end
-
+  # def list
+  # recipe = RecipeGenerator::Recipe.find(input.to_i)
+  # end
 
 	def detailed
-	   
 	   puts "Select a number based on the diet that you wish to know more about or press exit to enter:"
        input = nil
      while input != 'exit'
-       
-       input = gets.chomp
+       input = gets.strip
+       recipe = RecipeGenerator::Recipe.find(input.to_i)
        case input
        when "1"
-       	puts "More info on meat lovers"
+       	puts "#{recipe.description}"
        when "2"
        	puts "More info on vegetarian"
        when "3"
@@ -53,7 +48,7 @@ class RecipeGenerator::CLI
 	end
 
 	def exit
-	 puts
+	   puts
      puts "What? You don't want to look at anymore food? You must be full, come back again tomorrow so you can indulge more!"
      puts
     end
