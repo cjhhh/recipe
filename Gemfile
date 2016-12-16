@@ -5,3 +5,5 @@ gemspec
 
    gem 'pry'
    gem 'nokogiri', '~> 1.4.2'
+   gem 'em-resolv-replace', '~> 1.1', '>= 1.1.3'
+
