@@ -41,11 +41,12 @@ class RecipeGenerator::CLI
        	recipe.ingredients
         puts "--------------------Recipe Directions--------------------"
         recipe.instructions
+        puts ""
         puts "Scroll up and down in order to see your previous recipes, enter a >different< number, or type 'exit' to exit the program."
        elsif input == "exit"
        	exit
 	   else
-	   	puts "That is an invalid entry, please type a number,or 'exit' "
+	   	puts "That is an invalid entry, please type a different number (than previously entered) ,or 'exit' "
 	  end  
 	 end
 	end
