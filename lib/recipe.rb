@@ -12,7 +12,7 @@ attr_accessor :name, :duration, :description, :link, :ingredients
      d.css("h3.teaser-item__title a span").text,
      d.css("ul.teaser-item__info-items li.teaser-item__info-item.teaser-item__info-item--total-time span.mins").text,
      d.css("div.field-item.even").text,
-     "http://www.bbbgoodfood.com#{d.css("a").attribute("href").text}"
+     "http://www.bbcgoodfood.com#{d.css("a").attribute("href").text}"
     )
   end
 
@@ -34,8 +34,17 @@ attr_accessor :name, :duration, :description, :link, :ingredients
   end
 
   def ingredients
-   @ingredients ||= doc.xpath("//div[@class='ingredients-list__content']/ul[1]/li").text
+   @ingredients ||= doc.xpath("//div[@class='ingredients-list__content']/ul[1]/li").collect {|items| puts "#{items.text}"}
   end
+
+
+  def instructions
+   @instructions ||= doc.xpath("//section[@id='recipe-method']/div/ol/li/p").map.with_index(1) { |directions, i| puts "#{i}. #{directions.text}" }
+  end
+
+
+
+
 
   def doc
    @doc ||= Nokogiri::HTML(open(self.link))
