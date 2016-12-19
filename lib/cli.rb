@@ -30,7 +30,7 @@ class RecipeGenerator::CLI
   end
 
    def general
-  puts "Select a number based on the food dish that you wish to know more about, type 'exit' to exit or b to go back a page: "
+  puts "Select a number based on the food dish that you wish to know more about, or type 'exit' to exit: "
 	   input = nil
      while input != 'exit'
        input = gets.strip
