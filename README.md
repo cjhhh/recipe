@@ -1,8 +1,9 @@
 # RecipeGenerator
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/recipe_generator`. To experiment with that code, run `bin/console` for an interactive prompt.
+This CLI gem is intended for you to be able to retrieve vegetarian recipes, quickly and efficiently. It will always update with the new recipes that are updated on this website, giving you choice which is important for you, the user.
 
-TODO: Delete this and the text above, and describe your gem
+In the future more features will be added, such as vegan, meat-lovers, pescetarian and many more options, enjoy!
+
 
 ## Installation
 
@@ -20,9 +21,6 @@ Or install it yourself as:
 
     $ gem install recipe_generator
 
-## Usage
-
-TODO: Write usage instructions here
 
 ## Development
 
